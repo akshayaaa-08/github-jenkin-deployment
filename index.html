@@ -1,10 +1,292 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Jenkins Deployment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Automated Deployment System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            line-height: 1.7;
+        }
+
+        .pipeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .step .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .step h3 {
+            color: #334155;
+            margin-bottom: 5px;
+        }
+
+        .arrow {
+            font-size: 25px;
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        .status {
+            text-align: center;
+            padding: 18px;
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            color: #047857;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .tech span {
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .detail-box {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #4f46e5;
+        }
+
+        .detail-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #475569;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .arrow {
+                display: none;
+            }
+
+            .pipeline {
+                flex-direction: column;
+            }
+
+            .step {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>GitHub + Jenkins + Docker</h1>
-    <p>Automated Deployment Successful!</p>
+
+    <header>
+        <h1>🚀 Automated Deployment System</h1>
+        <p>GitHub + Jenkins + Docker</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>📌 Project Overview</h2>
+
+            <p>
+                This mini project demonstrates an automated deployment system
+                using GitHub, Jenkins, and Docker. Whenever the application
+                source code is updated, Jenkins automatically builds the Docker
+                image and deploys the application inside a Docker container.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🔄 Deployment Pipeline</h2>
+
+            <div class="pipeline">
+
+                <div class="step">
+                    <div class="icon">💻</div>
+                    <h3>GitHub</h3>
+                    <p>Source Code</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <div class="icon">⚙️</div>
+                    <h3>Jenkins</h3>
+                    <p>Automation</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <div class="icon">🐳</div>
+                    <h3>Docker</h3>
+                    <p>Containerization</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <div class="icon">🌐</div>
+                    <h3>Website</h3>
+                    <p>Deployment</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+
+            <h2>✅ Deployment Status</h2>
+
+            <div class="status">
+                ✔ Automated Deployment Successful
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🛠 Technologies Used</h2>
+
+            <div class="tech">
+                <span>GitHub</span>
+                <span>Jenkins</span>
+                <span>Docker</span>
+                <span>HTML</span>
+                <span>CSS</span>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📊 Project Details</h2>
+
+            <div class="details">
+
+                <div class="detail-box">
+                    <strong>Project Type</strong>
+                    DevOps Mini Project
+                </div>
+
+                <div class="detail-box">
+                    <strong>Source Repository</strong>
+                    GitHub
+                </div>
+
+                <div class="detail-box">
+                    <strong>CI/CD Tool</strong>
+                    Jenkins
+                </div>
+
+                <div class="detail-box">
+                    <strong>Container Platform</strong>
+                    Docker
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Automated Deployment System | DevOps Mini Project
+    </footer>
+
 </body>
 </html>
+```
